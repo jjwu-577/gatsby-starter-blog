@@ -1,0 +1,86 @@
+.menu {
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  z-index: 10;
+}
+.logo {
+  width: 138px;
+  height: 45px;
+  line-height: 45px;
+  margin-top: 12px;
+  margin-left: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  &:hover{
+    background-color: rgb(0,0,0);
+    transition: 0.4s;
+    .svg{
+      fill: #fff;
+      transition: 0.4s;
+    }
+  }
+}
+.svg{
+  vertical-align: text-bottom;;
+}
+
+.menus{
+  position: absolute;
+  height: 70px;
+  line-height: 70px;
+  top: 0;
+  right: 0;
+  .menuitem{
+    display: inline-block;
+    height: 36px;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 36px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 0 20px;
+    &:hover{
+      background-color: rgb(0,0,0);
+      transition: 0.4s;
+      color: #fff; 
+    }
+  }
+  .iconLang{
+    width: 36px;
+    background-image: url(../../images/header/icon_language_b.png);
+    background-position: center center;
+    background-size:contain;
+    background-repeat: no-repeat;
+    &:hover{
+      background-image: url(../../images/header/icon_language_w.png);
+      transition: 0.4s;
+    }
+  }
+}
+
+
+
+.logoMobile{
+  margin-top: 12px;
+  margin-left: 20px;
+  width: 32px;
+  height: 32px;
+  border-radius: 20px;
+  background: url(../../images/header/icon_menu.png) center no-repeat rgba(0, 0, 0, 0.1);
+  backdrop-filter:blur(10px);
+  background-size:contain;
+  &:hover{
+    background: url(../../images/header/icon_menu_w.png) center no-repeat rgba(0, 0, 0, 1);
+    background-size:contain;
+    transition: 0.4s;
+  }
+  
+}

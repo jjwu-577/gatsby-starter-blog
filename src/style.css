@@ -241,9 +241,9 @@ a:focus {
 /* Custom classes */
 
 .global-wrapper {
-  margin: var(--spacing-0) auto;
+  /* margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
-  padding: var(--spacing-10) var(--spacing-5);
+  padding: var(--spacing-10) var(--spacing-5); */
 }
 
 .global-wrapper[data-is-root-path="true"] .bio {
@@ -330,4 +330,34 @@ a:focus {
   ol {
     list-style-position: inside;
   }
+}
+
+
+
+
+
+
+.txL {
+	font-size: 100px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 120px;
+	text-shadow: 2px 2px 16px rgba(0, 0, 0, 0.4);
+}
+
+.txM {
+	font-size: 50px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.txS {
+	font-size: 22px;
+	margin-top: 15px;
+	text-align: center;
+	text-shadow: 2px 2px 16px rgba(0, 0, 0, 0.4);
+}
+
+.txMini {
+	font-size: 18px;
 }

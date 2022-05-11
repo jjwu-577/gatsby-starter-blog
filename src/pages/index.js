@@ -1,69 +1,45 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
-import Bio from "../components/bio"
+import StickyWrapper from "../components/StickyWrapper"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import useBigScreen from "../hooks/bigScreen"
+const ossUrl="https://resource.nreal.ai/web/"
+const bg1=`${ossUrl}images/air/home_kv.jpg`
+const bg2=`${ossUrl}images/air/home_scenario.jpg`
 
-const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
-
-  if (posts.length === 0) {
-    return (
-      <Layout location={location} title={siteTitle}>
-        <Seo title="All posts" />
-        <Bio />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
-      </Layout>
-    )
-  }
+const Index = ({ data, location }) => {
+  const bigScreen = useBigScreen(1022)
+  const text1 = [
+    {
+      value:"dddd",
+      spacer: "10px",
+    },
+    {
+      value: "wwww",
+      spacer: 0,
+    },
+  ]
+  const text2 = [
+    {
+      value:"888",
+      spacer: 0,
+    },
+  ]
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <Seo title="All posts" />
-      <Bio />
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
+    <Layout location={location}>
+      <Seo title="Home" />
+      <StickyWrapper bigScreen={bigScreen}  stickyHeight={"200vh"} bgImgUrl={bg1} divSpacer="0" text={text1} width="100%" />
+      <StickyWrapper bigScreen={bigScreen}  stickyHeight={"200vh"} bgImgUrl={bg2} divSpacer="calc(50vh - 100px)" text={text2} width="100%"/>
 
-          return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
-          )
-        })}
-      </ol>
+      
     </Layout>
   )
 }
 
-export default BlogIndex
+export default Index
 
 export const pageQuery = graphql`
   query {

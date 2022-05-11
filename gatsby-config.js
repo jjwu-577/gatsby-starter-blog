@@ -12,6 +12,15 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-less`,
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /svg/
+        },
+      },
+    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
