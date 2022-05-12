@@ -5,11 +5,13 @@ import StickyWrapper from "../components/StickyWrapper"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import useBigScreen from "../hooks/bigScreen"
+import { injectIntl, Link, FormattedMessage } from "gatsby-plugin-react-intl"
 const ossUrl="https://resource.nreal.ai/web/"
 const bg1=`${ossUrl}images/air/home_kv.jpg`
 const bg2=`${ossUrl}images/air/home_scenario.jpg`
 
-const Index = ({ data, location }) => {
+const Index = ({ intl,data, location }) => {
+  debugger
   const bigScreen = useBigScreen(1022)
   const text1 = [
     {
@@ -17,7 +19,7 @@ const Index = ({ data, location }) => {
       spacer: "10px",
     },
     {
-      value: "wwww",
+      value: intl.formatMessage({ id: "homepage_0" }),
       spacer: 0,
     },
   ]
@@ -39,7 +41,7 @@ const Index = ({ data, location }) => {
   )
 }
 
-export default Index
+export default injectIntl(Index)
 
 export const pageQuery = graphql`
   query {
