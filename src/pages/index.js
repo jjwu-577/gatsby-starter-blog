@@ -13,7 +13,7 @@ const Index = ({ data, location }) => {
   const bigScreen = useBigScreen(1022)
   const text1 = [
     {
-      value:"dddd",
+      value:data.contentfulPerson.name,
       spacer: "10px",
     },
     {
@@ -23,7 +23,7 @@ const Index = ({ data, location }) => {
   ]
   const text2 = [
     {
-      value:"888",
+      value:data.contentfulPerson.phone,
       spacer: 0,
     },
   ]
@@ -33,7 +33,7 @@ const Index = ({ data, location }) => {
       <Seo title="Home" />
       <StickyWrapper bigScreen={bigScreen}  stickyHeight={"200vh"} bgImgUrl={bg1} divSpacer="0" text={text1} width="100%" />
       <StickyWrapper bigScreen={bigScreen}  stickyHeight={"200vh"} bgImgUrl={bg2} divSpacer="calc(50vh - 100px)" text={text2} width="100%"/>
-
+      
       
     </Layout>
   )
@@ -48,17 +48,11 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-        }
+    contentfulPerson(name: {}) {
+      name
+      phone
+      image {
+        url
       }
     }
   }

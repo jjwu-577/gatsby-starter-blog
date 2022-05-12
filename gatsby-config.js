@@ -12,6 +12,14 @@ module.exports = {
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `1lipkpfh4kgz`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: `Ye9wzvNY5zk0KdpIEaM9jFFLoRz72Xe3Q5yuxD6R23k`,
+      },
+    },
     `gatsby-plugin-less`,
     {
       resolve: "gatsby-plugin-react-svg",
