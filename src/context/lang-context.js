@@ -12,7 +12,7 @@ const langJsonConfig = {
     en: enJSON,
     zh: zhJSON,
     ko: koJSON,
-    ja:jaJSON
+    ja: jaJSON
   }
 
 export const LangProvider = ({ children }) => {

@@ -5,7 +5,8 @@ import StickyWrapper from "../components/StickyWrapper"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import useBigScreen from "../hooks/bigScreen"
-import {useIntl} from "react-intl"
+// @ts-ignore
+import { useIntl } from "react-intl"
 const ossUrl="https://resource.nreal.ai/web/"
 const bg1=`${ossUrl}images/air/home_kv.jpg`
 const bg2=`${ossUrl}images/air/home_scenario.jpg`
@@ -15,11 +16,11 @@ const Index = ({ data, location }) => {
   const bigScreen = useBigScreen(1022)
   const text1 = [
     {
-      value:data.contentfulPerson.name,
+      value:intl.formatMessage({ id: `homepage_0` }),
       spacer: "10px",
     },
     {
-      value: intl.formatMessage({ id: "homepage_0" }),
+      value: data.contentfulPerson.name,
       spacer: 0,
     },
   ]

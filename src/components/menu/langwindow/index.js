@@ -13,6 +13,7 @@ const LangWindow = ({ clicklang }) => {
         {languagesList.map(item => {
           return (
             <div
+              aria-hidden="true"
               onClick={() => setlang(item.lang)}
               key={item.lang}
               className={style.contentitem}
