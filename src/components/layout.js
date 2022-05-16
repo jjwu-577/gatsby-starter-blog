@@ -8,9 +8,9 @@ const Layout = ({ location, title, children }) => {
         <Menu></Menu>
       </header>
       <main>{children}</main>
-      <footer>
+      {/* <footer>
         
-      </footer>
+      </footer> */}
     </div>
   )
 }

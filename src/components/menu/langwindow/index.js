@@ -1,15 +1,28 @@
-import React from "react";
+import React,{useContext} from "react"
 import * as style from "./index.module.less"
-const LangWindow = ({clicklang}) =>{
-return (
+import { languagesList } from "../../../intl/langlist"
+import { LangSetContext } from "../../../context/lang-context"
+const LangWindow = ({ clicklang }) => {
+  const langSetContext = useContext(LangSetContext)
+  const setlang = lang => {
+    langSetContext(lang)
+  }
+  return (
     <div className={style.modal} aria-hidden="true" onClick={clicklang}>
-        <div className={style.content}>
-            <div className={style.contentitem}>English</div>
-            <div className={style.contentitem}>简体中文</div>
-            <div className={style.contentitem}>日本语</div>
-            <div className={style.contentitem}>韩语</div>
-        </div>
+      <div className={style.content}>
+        {languagesList.map(item => {
+          return (
+            <div
+              onClick={() => setlang(item.lang)}
+              key={item.lang}
+              className={style.contentitem}
+            >
+              {item.text}
+            </div>
+          )
+        })}
+      </div>
     </div>
-)
+  )
 }
 export default LangWindow

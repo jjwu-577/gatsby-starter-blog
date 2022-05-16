@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Blog`,
@@ -12,25 +16,6 @@ module.exports = {
     },
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-react-intl`,
-      options: {
-        // language JSON resource path
-        path: `${__dirname}/src/intl`,
-        // supported language
-        languages: [`en`, `ko`, `de`],
-        // language file path
-        defaultLanguage: `ko`,
-        // option to redirect to `/ko` when connecting `/`
-        redirect: true,
-        // option for use / as defaultLangauge root path. if your defaultLanguage is `ko`, when `redirectDefaultLanguageToRoot` is true, then it will not generate `/ko/xxx` pages, instead of `/xxx`
-        redirectDefaultLanguageToRoot: false,
-        // paths that you don't want to genereate locale pages, example: ["/dashboard/","/test/**"], string format is from micromatch https://github.com/micromatch/micromatch
-        ignoredPaths: [],
-        // option to fallback to the defined language instead of the `defaultLanguage` if the user langauge is not in the list
-        fallbackLanguage: `en`,
-      },
-    },
     {
       resolve: `gatsby-source-contentful`,
       options: {
