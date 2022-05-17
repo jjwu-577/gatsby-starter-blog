@@ -20,10 +20,12 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `${process.env.CONTENTFUL_SPACEID}`,
+        spaceId:"1lipkpfh4kgz",
+        //  `${process.env.CONTENTFUL_SPACEID}`,
         // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: `${process.env.CONTENTFUL_ACCESSTOKEN}`,
-        environment:`${process.env.CONTENTFUL_ENV}`
+        accessToken: "gpTzYywP8TxGHjlbww3BpnGavEyWq8KbcSPMZT6ZfSY"
+        // `${process.env.CONTENTFUL_ACCESSTOKEN}`,
+        // environment:`${process.env.CONTENTFUL_ENV}`
       },
     },
     `gatsby-plugin-less`,
