@@ -11,8 +11,8 @@ export const languagesList = [
     lang: "ja",
     text: "日本語",
   },
-//   {
-//     lang: "ko",
-//     text: "한국어",
-//   },
+  {
+    lang: "ko",
+    text: "한국어",
+  },
 ]

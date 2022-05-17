@@ -16,12 +16,14 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `1lipkpfh4kgz`,
+        spaceId: `${process.env.CONTENTFUL_SPACEID}`,
         // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: `Ye9wzvNY5zk0KdpIEaM9jFFLoRz72Xe3Q5yuxD6R23k`,
+        accessToken: `${process.env.CONTENTFUL_ACCESSTOKEN}`,
+        environment:`${process.env.CONTENTFUL_ENV}`
       },
     },
     `gatsby-plugin-less`,

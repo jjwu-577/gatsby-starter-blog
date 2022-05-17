@@ -5,28 +5,27 @@ import StickyWrapper from "../components/StickyWrapper"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import useBigScreen from "../hooks/bigScreen"
-// @ts-ignore
-import { useIntl } from "react-intl"
+import { useIntl} from "react-intl"
 const ossUrl="https://resource.nreal.ai/web/"
 const bg1=`${ossUrl}images/air/home_kv.jpg`
 const bg2=`${ossUrl}images/air/home_scenario.jpg`
 
-const Index = ({ data, location }) => {
-  const intl = useIntl()
+const Index = ({  location }) => {
+ const intl = useIntl()
   const bigScreen = useBigScreen(1022)
   const text1 = [
     {
-      value:intl.formatMessage({ id: `homepage_0` }),
+      value:intl.formatMessage({ id: "homepage_0" }),
       spacer: "10px",
     },
     {
-      value: data.contentfulPerson.name,
+      value: intl.formatMessage({ id: "homepage_1" }),
       spacer: 0,
     },
   ]
   const text2 = [
     {
-      value:data.contentfulPerson.phone,
+      value:intl.formatMessage({ id: "homepage_2" }),
       spacer: 0,
     },
   ]
@@ -51,12 +50,6 @@ export const pageQuery = graphql`
         title
       }
     }
-    contentfulPerson(name: {}) {
-      name
-      phone
-      image {
-        url
-      }
-    }
+   
   }
 `
